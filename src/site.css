@@ -1,3 +1,14 @@
 :root { scroll-behavior: smooth; }
 header { box-shadow: 0 2px 12px rgba(0,0,0,.06); }
 main .container { padding-top: 2rem; padding-bottom: 2rem; }
+
+.hero .display-5 {
+  letter-spacing: .2px;
+}
+.hero .lead {
+  color: #495057;
+  max-width: 46ch;
+}
+@media (min-width: 992px) {
+  .py-lg-6 { padding-top: 5rem !important; padding-bottom: 5rem !important; }
+}
