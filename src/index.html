@@ -48,6 +48,9 @@
 }
 </script>
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+
     <link rel="stylesheet" href="./site.css">
 </head>
 
@@ -107,12 +110,6 @@
         </div>
     </section>
 
-    <section id="galerie" class="py-5 bg-white">
-        <div class="container">
-            <h2 class="h4 mb-4">Galerie</h2>
-            <p class="text-muted">imagini after/before.</p>
-        </div>
-    </section>
     <section id="faq" class="py-5 bg-light">
         <div class="container">
             <h2 class="h4 mb-4">Întrebări frecvente</h2>
@@ -297,14 +294,58 @@
         </div>
     </section>
 
-    <footer class="border-top bg-white py-4 mt-5">
-        <div class="container small text-center text-muted">
-            <p class="mb-1">&copy; <span id="year"></span> Fresh Start Solution. Toate drepturile rezervate.</p>
-            <p class="mb-0">
-                <a href="mailto:contact@freshstartsolution.ro"
-                    class="text-decoration-none me-3">contact@freshstartsolution.ro</a>
-                <a href="#">Înapoi sus</a>
-            </p>
+    <footer class="fs-footer">
+        <div class="container">
+            <div class="row">
+
+                <!-- COL 1: Brand + about + social -->
+                <div class="col-lg-4 col-md-6 fs-footer-section mb-4">
+                    <div class="fs-footer-logo">Fresh Start Solution</div>
+                    <p class="fs-footer-about">
+                        Curatenie pentru birouri si locuinte in Alba Iulia, Sebes si imprejurimi.
+                    </p>
+                    <div class="fs-social-links">
+                        <a href="#" class="fs-social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="fs-social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- COL 2: Empty spacer for desktop -->
+                <div class="d-none d-lg-block fs-footer-spacer"></div>
+
+                <!-- COL 3: Navigation -->
+                <div class="col-lg-3 col-md-6 fs-footer-section mb-4">
+                    <h5>Navigare</h5>
+                    <ul class="fs-footer-links">
+                        <li><a href="./index.html#servicii">Servicii</a></li>
+                        <li><a href="./galerie.html">Galerie</a></li>
+                        <li><a href="./faq.html">Intrebari frecvente</a></li>
+                        <li><a href="./index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- COL 4: Legal + contact -->
+                <div class="col-lg-3 col-md-12 fs-footer-section mb-4">
+                    <h5>Legal si contact</h5>
+                    <ul class="fs-footer-links">
+                        <li><a href="./politica-confidentialitate.html">Politica de confidentialitate</a></li>
+                        <li><a href="./politica-cookies.html">Politica de cookies</a></li>
+                        <li><span>Telefon: <a href="tel:+40740000000">+40 740 000 000</a></span></li>
+                        <li><span>Email: <a
+                                    href="mailto:contact@freshstartsolution.ro">contact@freshstartsolution.ro</a></span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="fs-footer-bottom">
+                <p>© <span id="year"></span> Fresh Start Solution. Toate drepturile rezervate.</p>
+            </div>
         </div>
     </footer>
 
