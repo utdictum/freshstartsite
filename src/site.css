@@ -3,7 +3,11 @@
   --brand-green: #4de3b6;
   --brand-green-rgb: 32, 201, 151;
 }
-
+/* this makes sure the sticky nav doesnt cover the thing*/
+section[id], 
+main[id] {
+    scroll-margin-top: 100px; 
+}
 header {
   box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
 }
