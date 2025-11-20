@@ -22,3 +22,20 @@
     }, 2500);
   });
 })();
+
+
+// close mobile menu when a link is clicked
+(() => {
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .btn-nav-cta');
+  const menuToggle = document.getElementById('mainnav');
+  const bsCollapse = new bootstrap.Collapse(menuToggle, { toggle: false });
+
+  navLinks.forEach((l) => {
+    l.addEventListener('click', () => {
+        // check if the menu is actually open (has class 'show')
+        if (menuToggle.classList.contains('show')) {
+            bsCollapse.hide();
+        }
+    });
+  });
+})();

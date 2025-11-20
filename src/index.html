@@ -55,21 +55,27 @@
 </head>
 
 <body class="bg-light">
-    <header class="border-bottom sticky-top bg-white">
+<header class="navbar-modern sticky-top bg-white">
         <nav class="navbar navbar-expand-lg navbar-light container">
-            <a class="navbar-brand fw-semibold" href="./index.html">Fresh Start Solution</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainnav"
+            <a class="navbar-brand fw-bold brand-text" href="./index.html">
+                <span class="brand-accent">Fresh</span> Start Solution
+            </a>
+            
+            <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainnav"
                 aria-controls="mainnav" aria-expanded="false" aria-label="Comută navigarea">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="mainnav">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page"
-                            href="./index.html#acasa">Acasă</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./index.html#servicii">Servicii</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./galerie.html">Galerie</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./faq.html">Întrebări frecvente</a></li>
-                    <li class="nav-item"><a class="btn btn-primary ms-lg-3" href="./index.html#contact">Contact</a></li>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                    <li class="nav-item"><a class="nav-link px-3" href="./index.html#acasa">Acasă</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="./index.html#servicii">Servicii</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="./galerie.html">Galerie</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="./faq.html">Întrebări</a></li>
+                    
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a class="btn btn-nav-cta px-4 rounded-pill" href="./index.html#contact">Contact</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -88,7 +94,6 @@
                         </p>
                         <div class="d-flex gap-2">
                             <a class="btn btn-primary btn-lg" href="#contact">Cere o ofertă</a>
-                            <a class="btn btn-outline-secondary btn-lg" href="#servicii">Vezi servicii</a>
                         </div>
                     </div>
                     <div class="col-lg-5">
@@ -103,18 +108,101 @@
         </section>
     </main>
 
-    <section id="servicii" class="py-5 bg-white">
+<section id="servicii" class="py-5 bg-white">
         <div class="container">
-            <h2 class="h4 mb-4">Servicii</h2>
-            <p class="text-muted">Curățenie birouri, rezidențial, etc</p>
+            <div class="text-center mb-5">
+                <h2 class="h3 fw-bold mb-2">Servicii de Curățenie</h2>
+                <p class="text-muted">Soluții complete pentru spațiul tău</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm service-card">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon mb-3">
+                                <i class="bi bi-building"></i>
+                            </div>
+                            <h3 class="h5 fw-semibold">Birouri & Spații Comerciale</h3>
+                            <p class="text-muted small mb-0">
+                                Curățare pentru medii profesionale.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm service-card">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon mb-3">
+                                <i class="bi bi-bricks"></i>
+                            </div>
+                            <h3 class="h5 fw-semibold">Post-renovare</h3>
+                            <p class="text-muted small mb-0">
+                                Curățare detaliată după lucrări: praf fin, resturi.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm service-card">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon mb-3">
+                                <i class="bi bi-microsoft"></i>
+                            </div>
+                            <h3 class="h5 fw-semibold">Geamuri & Rame</h3>
+                            <p class="text-muted small mb-0">
+                                Curățare interior și exterior pentru lumină naturală maximă.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm service-card">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon mb-3">
+                                <i class="bi bi-house-door"></i>
+                            </div>
+                            <h3 class="h5 fw-semibold">Curățenie Generală</h3>
+                            <p class="text-muted small mb-0">
+                                Aspirare, mop, praf, ferestre.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm service-card">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon mb-3">
+                                <i class="bi bi-calendar-check"></i>
+                            </div>
+                            <h3 class="h5 fw-semibold">Întreținere Periodică</h3>
+                            <p class="text-muted small mb-0">
+                                Abonamente săptămânale sau lunare pentru un cămin mereu curat.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm service-card">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon mb-3">
+                                <i class="bi bi-droplet"></i>
+                            </div>
+                            <h3 class="h5 fw-semibold">Bucătărie & Baie</h3>
+                            <p class="text-muted small mb-0">
+                                Igienizare completă, atenție la detalii și dezinfectare.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
-
-    <section id="faq" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="h4 mb-4">Întrebări frecvente</h2>
-            <p class="text-muted">tbh intrebari raspunsuri</p>
-        </div>
     </section>
     <section id="contact" class="py-5 bg-white">
         <div class="container">

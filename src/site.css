@@ -376,3 +376,111 @@ main .container {
     padding-top: 10px !important;
   }
 }
+
+/* --- SERVICES SECTION --- */
+
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+/* lift up effect on hover */
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1) !important;
+}
+
+/* circular icon */
+.service-icon {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(var(--brand-green-rgb), 0.1); 
+    color: var(--brand-green);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* when hovering the card, fill the icon with green */
+.service-card:hover .service-icon {
+    background-color: var(--brand-green);
+    color: #051009;
+}
+
+
+/* --- MODERN NAVBAR --- */
+
+/* The main container */
+.navbar-modern {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); /* Very subtle shadow instead of border */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transition: padding 0.3s ease;
+}
+
+/* Logo styling */
+.brand-text {
+    font-size: 1.35rem;
+    letter-spacing: -0.5px;
+    color: #051009;
+}
+
+.brand-accent {
+    color: var(--brand-green); /* Uses your existing green variable */
+}
+
+/* Navigation Links */
+.navbar-modern .nav-link {
+    font-weight: 500;
+    color: #6c757d; /* Soft gray */
+    font-size: 0.95rem;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.navbar-modern .nav-link:hover,
+.navbar-modern .nav-link.active {
+    color: #051009; /* Darker on hover */
+}
+
+/* green dot animation under links on hover */
+.navbar-modern .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 5px;
+    left: 50%;
+    background-color: var(--brand-green);
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy effect */
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.navbar-modern .nav-link:hover::after {
+    width: 30px; /* Expands to a small line */
+    opacity: 1;
+}
+
+/* Navbar Specific Button */
+.btn-nav-cta {
+    background-color: #051009; /* Black button */
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 2px solid #051009;
+    transition: all 0.3s ease;
+}
+
+.btn-nav-cta:hover {
+    background-color: var(--brand-green);
+    border-color: var(--brand-green);
+    color: #051009;
+    transform: translateY(-2px);
+}
