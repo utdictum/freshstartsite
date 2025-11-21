@@ -769,3 +769,21 @@ header {
     padding-bottom: 2rem;
 }
 
+/* =========================================
+   GALERIE PAGE BACKGROUND
+   ========================================= */
+.galerie-background {
+    background: linear-gradient(rgba(202, 210, 218, 0.7), rgba(204, 222, 235, 0.7)),
+                url('images/background_galerie.jpeg');
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Parallax effect */
+}
+
+/* whitw glow to the text title */
+.galerie-background h1, 
+.galerie-background p {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
