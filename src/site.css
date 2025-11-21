@@ -493,56 +493,66 @@ main .container {
 /* --- SERVICE CARD BACKGROUNDS --- */
 
 .service-card {
-    /* prepare the card to show an image behind it */
     position: relative;
     overflow: hidden;
-    background-color: #fff; 
-    z-index: 1; 
+    background-color: #051009;
+    z-index: 1;
     background-size: cover;
     background-position: center;
+    border: none;
 }
 
-/* 
-   Instead of fading the image, we put a white layer on top of it.
-   Change 0.9 to 0.8 if you want the image to be MORE visible. 
-   Change 0.9 to 0.95 if you want it LESS visible.
-*/
 .service-card::before {
     content: "";
     position: absolute;
-    inset: 0; /* Covers the whole card */
-    background-color: rgba(255, 255, 255, 0.50); 
-    z-index: -1; /* Puts it behind the text */
+    inset: 0;
+    background-color: rgba(5, 16, 9, 0.55); 
+    z-index: -1; 
     transition: background-color 0.3s ease;
 }
 
 
 .service-card:hover::before {
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(5, 16, 9, 0.35);
 }
 
-/* --- SPECIFIC IMAGES --- */
-
-.bg-birou {
-    background-image: url('/images/birou.jpg');
+/* TEXT COLORS: Force white text inside the cards */
+.service-card h3 {
+    color: #ffffff;
+    font-weight: 700;
 }
 
-.bg-renovare {
-    background-image: url('/images/post_renovare.jpg');
+/* Override the bootstrap 'text-muted' gray to make it readable */
+.service-card .text-muted {
+    color: rgba(255, 255, 255, 0.85) !important;
 }
 
-.bg-geamuri {
-    background-image: url('/images/geamuri_rame.jpg');
+/* ICON: White circle with Green icon (High Contrast) */
+.service-card .service-icon {
+    /* White background makes it pop against the dark photo */
+    background-color: #ffffff; 
+    color: var(--brand-green);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.bg-general {
-    background-image: url('/images/curatenie_generala.jpg');
+/* Hover Effect: Icon turns green, symbol turns white */
+.service-card:hover .service-icon {
+    background-color: var(--brand-green);
+    color: #ffffff;
 }
 
-.bg-intretinere {
-    background-image: url('/images/intretinere_periodica.jpg');
-}
-
-.bg-baie {
-    background-image: url('/images/buc_baie.jpg');
-}
+/* --- SPECIFIC IMAGES (Keep these lines) --- */
+.bg-birou { background-image: url('./images/birou.jpg'); }
+.bg-renovare { background-image: url('./images/post_renovare.jpg'); }
+.bg-geamuri { background-image: url('./images/geamuri_rame.jpg'); }
+.bg-general { background-image: url('./images/curatenie_generala.jpg'); }
+.bg-intretinere { background-image: url('./images/intretinere_periodica.jpg'); }
+.bg-baie { background-image: url('./images/buc_baie.jpg'); }
