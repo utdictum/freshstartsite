@@ -693,7 +693,7 @@ header {
 }
 
 /* =========================================
-   FAQ PAGE ONLY - Sticky Footer Fix
+   FAQ PAGE ONLY 
    ========================================= */
 .faq-page {
     display: flex;
@@ -705,7 +705,7 @@ header {
     flex: 1; /* Pushes the footer down to the bottom */
 }
 /* =========================================
-   FAQ ACCORDION STYLING (Jazzed Up)
+   FAQ ACCORDION STYLING
    ========================================= */
 .accordion-item {
     border: none;
@@ -749,7 +749,6 @@ header {
 }
 
 .faq-background {
-    /* Brand Navy Overlay + Your Image */
     background: linear-gradient(rgba(12, 14, 71, 0.2), rgba(12, 14, 71, 0.3)),
                 url('images/background_faq.jpeg');
     
@@ -769,3 +768,4 @@ header {
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
+
