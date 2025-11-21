@@ -1,0 +1,789 @@
+/* =========================================
+   1. VARIABLES & GLOBAL SETTINGS
+   ========================================= */
+:root {
+  scroll-behavior: smooth;
+  
+  /* BRAND COLORS */
+  --brand-green: #01b7ba; 
+  --brand-green-rgb: 1, 183, 186; 
+  
+  --brand-dark: #0c0e47;
+  --brand-dark-rgb: 12, 14, 71;
+  
+  --text-body: #495057;
+  --text-muted: #6c757d;
+}
+
+/* Fix for sticky nav covering anchor links */
+html {
+    scroll-padding-top: 280px;
+}
+
+/* Desktop adjustment */
+@media (min-width: 992px) {
+    html {
+        scroll-padding-top: 80px; 
+    }
+}
+
+body {
+    color: var(--brand-dark);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+header {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
+}
+
+/* =========================================
+   2. TYPOGRAPHY & UTILITIES
+   ========================================= */
+.link-brand {
+  color: var(--brand-green);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link-brand:hover {
+  color: #008f91;
+}
+
+/* Large padding utility */
+@media (min-width: 992px) {
+  .py-lg-6 {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+  }
+}
+
+/* =========================================
+   3. BUTTONS
+   ========================================= */
+/* Primary Brand Buttons */
+.btn-brand,
+.btn-primary {
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  z-index: 1;
+
+  /* Clean Gradient: Light Cyan to White */
+  background-image: linear-gradient(90deg, #e0f7fa, #ffffff, #e0f7fa);
+  background-size: 200% auto;
+  color: var(--brand-dark);
+  box-shadow: 0 4px 15px rgba(12, 14, 71, 0.15);
+}
+
+.btn-brand:hover,
+.btn-primary:hover {
+  background-position: right center;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(12, 14, 71, 0.25);
+  color: var(--brand-green);
+}
+
+.btn-brand:active,
+.btn-primary:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(12, 14, 71, 0.15);
+}
+
+/* Outline Secondary Button */
+.btn-outline-secondary {
+  border-radius: 50px;
+  padding: 11px 30px;
+  border: 2px solid #e0f7fa;
+  color: var(--brand-dark);
+  font-weight: 600;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #e0f7fa;
+  color: var(--brand-dark);
+  border-color: #e0f7fa;
+  transform: translateY(-3px);
+}
+
+/* Navbar Specific Button */
+.btn-nav-cta {
+  background-color: var(--brand-dark);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 2px solid var(--brand-dark);
+  transition: all 0.3s ease;
+}
+
+.btn-nav-cta:hover {
+  background-color: var(--brand-green);
+  border-color: var(--brand-green);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Contact Actions Container */
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-actions .btn-brand {
+  width: 100%;
+  text-align: center;
+}
+
+/* Button Width Utility for Form */
+#contactForm .btn-wide {
+  width: 100%;
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  #contactForm .btn-wide {
+    max-width: 100%;
+  }
+}
+
+/* =========================================
+   4. NAVBAR (Modern)
+   ========================================= */
+.navbar-modern {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  transition: padding 0.3s ease;
+}
+
+.brand-text {
+  font-size: 1.35rem;
+  letter-spacing: -0.5px;
+  color: var(--brand-dark);
+}
+
+.brand-accent {
+  color: var(--brand-green);
+}
+
+.navbar-modern .nav-link {
+  font-weight: 500;
+  color: #6c757d;
+  font-size: 0.95rem;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.navbar-modern .nav-link:hover,
+.navbar-modern .nav-link.active {
+  color: var(--brand-dark);
+}
+
+/* Teal dot animation */
+.navbar-modern .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 5px;
+  left: 50%;
+  background-color: var(--brand-green);
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.navbar-modern .nav-link:hover::after {
+  width: 30px;
+  opacity: 1;
+}
+
+/* =========================================
+   5. HERO SECTION
+   ========================================= */
+.hero .display-5 {
+  letter-spacing: .2px;
+}
+
+.hero .lead {
+  color: var(--text-body);
+  max-width: 46ch;
+}
+
+/* --- DARK HERO BANNER --- */
+.dark-banner-section {
+    background: 
+        linear-gradient(rgba(12, 14, 71, 0.25), rgba(12, 14, 71, 0.85)),
+        url('images/background.jpeg');
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gradient overlay */
+.dark-banner-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at top left,
+        rgba(1, 183, 186, 0.25),
+        transparent 35%
+    );
+    opacity: 0.85;
+    z-index: 0;
+}
+
+.banner-column {
+    position: relative;
+    z-index: 2;
+    min-height: 420px;
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 3rem;
+    align-items: center;
+}
+
+.banner-inner {
+    max-width: 560px;
+}
+
+.banner-inner .title-large {
+    font-size: clamp(2.4rem, 2.9vw + 1.4rem, 3.2rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin-bottom: 1rem;
+    line-height: 1.15;
+    color: #ffffff;
+}
+
+.banner-inner .text-base {
+    font-size: 1rem;
+    color: #e0e0e0;
+    max-width: 46ch;
+}
+
+/* Primary button styling (dark variant) */
+.btn-primary-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    padding: 0.8rem 1.8rem;
+    border: none;
+    background-color: #ffffff;
+    color: var(--brand-dark);
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    transition: all 0.25s ease;
+}
+
+.btn-primary-dark:hover {
+    background-color: var(--brand-green);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.hero-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-logo-circle {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-logo-img {
+    max-width: 80%;
+    height: auto;
+}
+
+/* WhatsApp Vertical Link */
+.banner-link {
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.banner-link .line-top,
+.banner-link .line-bottom {
+    width: 2px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.banner-link a {
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.15);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    backdrop-filter: blur(4px);
+    transition: background-color 0.25s ease;
+}
+
+.banner-link a:hover {
+    background-color: var(--brand-green);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 991.98px) {
+    .banner-column {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 4rem;
+        padding-bottom: 3rem;
+    }
+    .banner-inner { margin-inline: auto; }
+    .banner-link { display: none; }
+}
+
+@media (max-width: 575.98px) {
+    .banner-column {
+        padding-top: 4rem;
+        padding-bottom: 2.5rem;
+    }
+}
+
+/* =========================================
+   6. SERVICES SECTION (Cards)
+   ========================================= */
+.service-card {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--brand-dark);
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(12, 14, 71, 0.15) !important;
+}
+
+/* Dark Overlay */
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(29, 46, 131, 0.45); 
+  z-index: -1;
+  transition: background-color 0.3s ease;
+}
+
+.service-card:hover::before {
+  background-color: rgba(12, 14, 71, 0.25);
+}
+
+.service-card h3 {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.service-card .text-muted {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.service-card .service-icon {
+  background-color: #ffffff;
+  color: var(--brand-green);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  background-color: var(--brand-green);
+  color: #ffffff;
+}
+
+.bg-birou { background-image: url('./images/birou.jpg'); }
+.bg-renovare { background-image: url('./images/post_renovare.jpg'); }
+.bg-geamuri { background-image: url('./images/geamuri_rame.jpg'); }
+.bg-general { background-image: url('./images/curatenie_generala.jpg'); }
+.bg-intretinere { background-image: url('./images/intretinere_periodica.jpg'); }
+.bg-baie { background-image: url('./images/buc_baie.jpg'); }
+
+
+/* =========================================
+   7. CONTACT SECTION
+   ========================================= */
+#contact .card {
+  border-radius: 1.25rem;
+  border: 0;
+  box-shadow: 0 18px 45px rgba(12, 14, 71, 0.08);
+}
+
+@media (min-width: 768px) {
+  #contact .contact-row>[class*="col-"] { display: flex; }
+  #contact .contact-row .card { flex: 1 1 auto; }
+}
+
+#contact .contact-icon {
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(1, 183, 186, 0.1); /* Teal tint */
+  color: var(--brand-green);
+  font-size: 1.35rem;
+}
+
+/* Input Focus Colors */
+#contactForm .form-control:focus,
+#contactForm .form-select:focus,
+#contactForm .form-check-input:focus {
+  box-shadow: 0 0 0 0.2rem rgba(1, 183, 186, 0.2);
+  border-color: var(--brand-green);
+}
+
+/* Mobile fix for contact area text */
+#contact .contact-area-note {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--brand-green) !important;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   6. FOOTER (FIXED & SPACIOUS)
+   ========================================= */
+/*CUSTOM FOOTER */
+.fs-footer {
+  background: linear-gradient(to right, #0c0e47, #637AB9);
+  color: #ffffff;
+  padding: 70px 0 30px;
+  position: relative;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.fs-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, #A8FBD3, #4FB7B3);
+}
+
+/* logo / about */
+
+.fs-footer-logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  background: linear-gradient(45deg, #a7cfbc, #01b7ba);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.fs-footer-about {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* headings */
+
+.fs-footer h5 {
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+  font-size: 1rem;
+}
+
+.fs-footer h5::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 32px;
+  height: 2px;
+  background: #A8FBD3;
+}
+
+/* links list */
+
+.fs-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fs-footer-links li {
+  margin-bottom: 10px;
+}
+
+.fs-footer-links a {
+  color: #d4e4ff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-size: 0.95rem;
+}
+
+.fs-footer-links a:hover {
+  color: #A8FBD3;
+  transform: translateX(4px);
+}
+
+/* social icons */
+
+.fs-social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.fs-social-icon {
+  width: 36px;
+  height: 36px;
+  background: rgba(168, 251, 211, 0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #feffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(168, 251, 211, 0.4);
+}
+
+.fs-social-icon:hover {
+  background: #4FB7B3;
+  color: #ffffff;
+  transform: translateY(-3px);
+  border-color: #4FB7B3;
+}
+
+/* bottom strip */
+
+.fs-footer-bottom {
+  margin-top: 40px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(168, 251, 211, 0.25);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.fs-footer-bottom-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.fs-footer-bottom-links a {
+  color: #d4e4ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.fs-footer-bottom-links a:hover {
+  color: #A8FBD3;
+}
+
+/* responsive spacing */
+
+@media (max-width: 768px) {
+  .fs-footer-section {
+    margin-bottom: 30px;
+  }
+
+  .fs-footer-bottom-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* DESKTOP GRID FIX: 2:spacer:1:1 layout */
+@media (min-width: 1200px) {
+  .fs-footer .row {
+    display: grid;
+    grid-template-columns: 4fr 2fr 1fr 1fr;
+    column-gap: 40px;
+    align-items: flex-start;
+  }
+
+  .fs-footer-section {
+    width: auto !important;
+    max-width: none !important;
+  }
+}
+
+/* reduced footer height for desktop */
+@media (min-width: 1200px) {
+  .fs-footer {
+    padding-top: 40px !important;
+    padding-bottom: 20px !important;
+  }
+
+  .fs-footer-section {
+    margin-bottom: 10px !important;
+  }
+
+  .fs-footer-bottom {
+    margin-top: 20px !important;
+    padding-top: 10px !important;
+  }
+}
+
+/* =========================================
+   FAQ PAGE ONLY 
+   ========================================= */
+.faq-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Forces the body to be at least as tall as the screen */
+}
+
+.faq-page main {
+    flex: 1; /* Pushes the footer down to the bottom */
+}
+/* =========================================
+   FAQ ACCORDION STYLING
+   ========================================= */
+.accordion-item {
+    border: none;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem !important;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Soft shadow */
+}
+
+.accordion-button {
+    font-weight: 600;
+    color: var(--brand-dark);
+    background-color: #ffffff;
+    padding: 1.2rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+/* When the question is OPEN */
+.accordion-button:not(.collapsed) {
+    color: var(--brand-dark);
+    background-color: rgba(1, 183, 186, 0.15); /* Light Brand Teal */
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.05); /* Subtle separator */
+}
+
+/* The arrow icon color */
+.accordion-button::after {
+    background-size: 1.25rem;
+    transition: transform 0.3s ease;
+}
+
+/* Make the arrow Teal when open */
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2301b7ba'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-body {
+    padding: 1.5rem;
+    background-color: #fff;
+    color: #495057;
+    line-height: 1.6;
+}
+
+.faq-background {
+    background: linear-gradient(rgba(12, 14, 71, 0.2), rgba(12, 14, 71, 0.3)),
+                url('images/background_faq.jpeg');
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+    position: relative;
+}
+
+
+.faq-background h1 {
+    color: #0c0e47 !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.faq-background .container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* =========================================
+   GALERIE PAGE BACKGROUND
+   ========================================= */
+.galerie-background {
+    background: linear-gradient(rgba(202, 210, 218, 0.7), rgba(204, 222, 235, 0.7)),
+                url('images/background_galerie.jpeg');
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* whitw glow to the text title */
+.galerie-background h1, 
+.galerie-background p {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
