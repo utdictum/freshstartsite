@@ -409,7 +409,7 @@ header {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(12, 14, 71, 0.55); 
+  background-color: rgba(29, 46, 131, 0.45); 
   z-index: -1;
   transition: background-color 0.3s ease;
 }
@@ -502,33 +502,35 @@ header {
 
 
 /* =========================================
-   8. FOOTER
+   6. FOOTER (FIXED & SPACIOUS)
    ========================================= */
+/*CUSTOM FOOTER */
 .fs-footer {
-  /* Navy Gradient */
-  background: linear-gradient(to right, var(--brand-dark), #084766);
+  background: linear-gradient(to right, #0c0e47, #637AB9);
   color: #ffffff;
   padding: 70px 0 30px;
   position: relative;
   overflow: hidden;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* Top Teal Line */
 .fs-footer::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 3px;
-  background: linear-gradient(to right, var(--brand-green), #ffffff);
+  background: linear-gradient(to right, #A8FBD3, #4FB7B3);
 }
+
+/* logo / about */
 
 .fs-footer-logo {
   font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 18px;
-  /* Text Gradient: White to Teal */
-  background: linear-gradient(45deg, #ffffff, var(--brand-green));
+  background: linear-gradient(45deg, #a7cfbc, #01b7ba);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -539,6 +541,8 @@ header {
   margin-bottom: 20px;
   line-height: 1.6;
 }
+
+/* headings */
 
 .fs-footer h5 {
   color: #ffffff;
@@ -555,8 +559,10 @@ header {
   bottom: -10px;
   width: 32px;
   height: 2px;
-  background: var(--brand-green);
+  background: #A8FBD3;
 }
+
+/* links list */
 
 .fs-footer-links {
   list-style: none;
@@ -577,9 +583,11 @@ header {
 }
 
 .fs-footer-links a:hover {
-  color: var(--brand-green);
+  color: #A8FBD3;
   transform: translateX(4px);
 }
+
+/* social icons */
 
 .fs-social-links {
   display: flex;
@@ -590,38 +598,96 @@ header {
 .fs-social-icon {
   width: 36px;
   height: 36px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(168, 251, 211, 0.12);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: #feffff;
   text-decoration: none;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(168, 251, 211, 0.4);
 }
 
 .fs-social-icon:hover {
-  background: var(--brand-green);
+  background: #4FB7B3;
   color: #ffffff;
   transform: translateY(-3px);
-  border-color: var(--brand-green);
+  border-color: #4FB7B3;
 }
+
+/* bottom strip */
 
 .fs-footer-bottom {
   margin-top: 40px;
   padding-top: 18px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(168, 251, 211, 0.25);
   text-align: center;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.9rem;
 }
 
+.fs-footer-bottom-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.fs-footer-bottom-links a {
+  color: #d4e4ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.fs-footer-bottom-links a:hover {
+  color: #A8FBD3;
+}
+
+/* responsive spacing */
+
+@media (max-width: 768px) {
+  .fs-footer-section {
+    margin-bottom: 30px;
+  }
+
+  .fs-footer-bottom-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* DESKTOP GRID FIX: 2:spacer:1:1 layout */
 @media (min-width: 1200px) {
   .fs-footer .row {
     display: grid;
     grid-template-columns: 4fr 2fr 1fr 1fr;
     column-gap: 40px;
     align-items: flex-start;
+  }
+
+  .fs-footer-section {
+    width: auto !important;
+    max-width: none !important;
+  }
+}
+
+/* reduced footer height for desktop */
+@media (min-width: 1200px) {
+  .fs-footer {
+    padding-top: 40px !important;
+    padding-bottom: 20px !important;
+  }
+
+  .fs-footer-section {
+    margin-bottom: 10px !important;
+  }
+
+  .fs-footer-bottom {
+    margin-top: 20px !important;
+    padding-top: 10px !important;
   }
 }
