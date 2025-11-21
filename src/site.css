@@ -691,3 +691,81 @@ header {
     padding-top: 10px !important;
   }
 }
+
+/* =========================================
+   FAQ PAGE ONLY - Sticky Footer Fix
+   ========================================= */
+.faq-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Forces the body to be at least as tall as the screen */
+}
+
+.faq-page main {
+    flex: 1; /* Pushes the footer down to the bottom */
+}
+/* =========================================
+   FAQ ACCORDION STYLING (Jazzed Up)
+   ========================================= */
+.accordion-item {
+    border: none;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem !important;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Soft shadow */
+}
+
+.accordion-button {
+    font-weight: 600;
+    color: var(--brand-dark);
+    background-color: #ffffff;
+    padding: 1.2rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+/* When the question is OPEN */
+.accordion-button:not(.collapsed) {
+    color: var(--brand-dark);
+    background-color: rgba(1, 183, 186, 0.15); /* Light Brand Teal */
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.05); /* Subtle separator */
+}
+
+/* The arrow icon color */
+.accordion-button::after {
+    background-size: 1.25rem;
+    transition: transform 0.3s ease;
+}
+
+/* Make the arrow Teal when open */
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2301b7ba'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-body {
+    padding: 1.5rem;
+    background-color: #fff;
+    color: #495057;
+    line-height: 1.6;
+}
+
+.faq-background {
+    /* Brand Navy Overlay + Your Image */
+    background: linear-gradient(rgba(12, 14, 71, 0.2), rgba(12, 14, 71, 0.3)),
+                url('images/background_faq.jpeg');
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+    position: relative;
+}
+
+
+.faq-background h1 {
+    color: #0c0e47 !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.faq-background .container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}

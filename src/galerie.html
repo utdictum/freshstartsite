@@ -13,22 +13,27 @@
 </head>
 
 <body class="bg-light">
-
-    <header class="border-bottom sticky-top bg-white">
+    <header class="navbar-modern sticky-top bg-white">
         <nav class="navbar navbar-expand-lg navbar-light container">
-            <a class="navbar-brand fw-semibold" href="./index.html">Fresh Start Solution</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainnav"
-                aria-controls="mainnav" aria-expanded="false" aria-label="Comuta navigarea">
+            <a class="navbar-brand fw-bold brand-text" href="./index.html">
+                <span class="brand-accent">Fresh</span> Start Solution
+            </a>
+
+            <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mainnav" aria-controls="mainnav" aria-expanded="false" aria-label="Comută navigarea">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="mainnav">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="./index.html#acasa">Acasa</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./index.html#servicii">Servicii</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page"
-                            href="./galerie.html">Galerie</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./faq.html">Intrebari frecvente</a></li>
-                    <li class="nav-item"><a class="btn btn-primary ms-lg-3" href="./index.html#contact">Contact</a></li>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                    <li class="nav-item"><a class="nav-link px-3" href="./index.html#acasa">Acasă</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="./index.html#servicii">Servicii</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="./galerie.html">Galerie</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="./faq.html">Întrebări</a></li>
+
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a class="btn btn-nav-cta px-4 rounded-pill" href="./index.html#contact">Contact</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -244,15 +249,63 @@
     </main>
 
 
-    <footer class="border-top bg-white py-4 mt-5">
-        <div class="container small text-center text-muted">
-            <p class="mb-1">&copy; <span id="year"></span> Fresh Start Solution. Toate drepturile rezervate.</p>
-            <p class="mb-0">
-                <a href="mailto:contact@freshstartsolution.ro" class="text-decoration-none me-3">
-                    contact@freshstartsolution.ro
-                </a>
-                <a href="#">Inapoi sus</a>
-            </p>
+ <footer class="fs-footer">
+        <div class="container">
+            <div class="row">
+
+                <!-- COL 1: Brand + about + social -->
+                <div class="col-lg-4 col-md-6 fs-footer-section mb-4">
+                    <div class="fs-footer-logo">Fresh Start Solution</div>
+                                        <ul class="fs-footer-links">
+                        <li><a href="./despre_noi.html">Despre noi</a></li>
+                    </ul>
+                    <p class="fs-footer-about">
+                        Curatenie pentru birouri si locuinte in Alba Iulia, Sebes si imprejurimi.
+                    </p>
+                    <!--
+                    <div class="fs-social-links">
+                        <a href="#" class="fs-social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="fs-social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>-->
+
+                </div>
+
+                <!-- COL 2: Empty spacer for desktop -->
+                <div class="d-none d-lg-block fs-footer-spacer"></div>
+
+                <!-- COL 3: Navigation -->
+                <div class="col-lg-3 col-md-6 fs-footer-section mb-4">
+                    <h5>Navigare</h5>
+                    <ul class="fs-footer-links">
+                        <li><a href="./index.html#servicii">Servicii</a></li>
+                        <li><a href="./galerie.html">Galerie</a></li>
+                        <li><a href="./faq.html">Intrebari frecvente</a></li>
+                        <li><a href="./index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- COL 4: Legal + contact -->
+                <div class="col-lg-3 col-md-12 fs-footer-section mb-4">
+                    <h5>Legal si contact</h5>
+                    <ul class="fs-footer-links">
+                        <li><a href="./politica-confidentialitate.html">Politica de confidentialitate</a></li>
+                        <li><a href="./politica-cookies.html">Politica de cookies</a></li>
+                        <li><span>Telefon: <a href="tel:+40740000000">+40 740 000 000</a></span></li>
+                        <li><span>Email: <a
+                                    href="mailto:contact@freshstartsolution.ro">contact@freshstartsolution.ro</a></span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="fs-footer-bottom">
+                <p>© <span id="year"></span> Fresh Start Solution. Toate drepturile rezervate.</p>
+            </div>
         </div>
     </footer>
 
