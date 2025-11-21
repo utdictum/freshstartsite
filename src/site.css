@@ -1,33 +1,40 @@
+/* =========================================
+   1. VARIABLES & GLOBAL SETTINGS
+   ========================================= */
 :root {
   scroll-behavior: smooth;
   --brand-green: #4de3b6;
   --brand-green-rgb: 32, 201, 151;
 }
-/* this makes sure the sticky nav doesnt cover the thing*/
-section[id], 
-main[id] {
-    scroll-margin-top: 100px; 
+
+/* Fix for sticky nav covering anchor links */
+html {
+    scroll-padding-top: 280px;
 }
+
+/* Desktop adjustment */
+@media (min-width: 992px) {
+    html {
+        scroll-padding-top: 100px; 
+    }
+}
+
 header {
   box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
 }
 
-main .container {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+/* =========================================
+   2. TYPOGRAPHY & UTILITIES
+   ========================================= */
+.link-brand {
+  color: var(--brand-green);
 }
 
-/* BANNER */
-
-.hero .display-5 {
-  letter-spacing: .2px;
+.link-brand:hover {
+  color: #18a583;
 }
 
-.hero .lead {
-  color: #495057;
-  max-width: 46ch;
-}
-
+/* Large padding utility */
 @media (min-width: 992px) {
   .py-lg-6 {
     padding-top: 5rem !important;
@@ -35,29 +42,93 @@ main .container {
   }
 }
 
-/*FOOTER*/
+/* =========================================
+   3. BUTTONS
+   ========================================= */
+/* Primary Brand Buttons */
+.btn-brand,
+.btn-primary {
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  z-index: 1;
 
-.footer {
-  font-size: 0.875rem;
+  /* Gradient Look */
+  background-image: linear-gradient(90deg, #e6fcf5, #fbf6e7, #fcecfe);
+  background-size: 200% auto;
+  color: #14387e;
+  box-shadow: 0 4px 15px rgba(20, 56, 126, 0.15);
 }
 
-@media (max-width: 767.98px) {
-  .footer h6 {
-    font-size: 0.9rem;
-  }
-
-  .footer .small {
-    font-size: 0.8rem;
-  }
+.btn-brand:hover,
+.btn-primary:hover {
+  background-position: right center;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(20, 56, 126, 0.25);
+  color: #14387e;
 }
 
-
-/* FORM */
-#contactForm .form-control:focus,
-#contactForm .form-check-input:focus {
-  box-shadow: 0 0 0 .2rem rgba(13, 110, 253, .15);
+.btn-brand:active,
+.btn-primary:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(20, 56, 126, 0.15);
 }
 
+/* Outline Secondary Button */
+.btn-outline-secondary {
+  border-radius: 50px;
+  padding: 11px 30px;
+  border: 2px solid #e6fcf5;
+  color: #14387e;
+  font-weight: 600;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #e6fcf5;
+  color: #051009;
+  border-color: #e6fcf5;
+  transform: translateY(-3px);
+}
+
+/* Navbar Specific Button */
+.btn-nav-cta {
+  background-color: #051009;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 2px solid #051009;
+  transition: all 0.3s ease;
+}
+
+.btn-nav-cta:hover {
+  background-color: var(--brand-green);
+  border-color: var(--brand-green);
+  color: #051009;
+  transform: translateY(-2px);
+}
+
+/* Contact Actions Container */
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-actions .btn-brand {
+  width: 100%;
+  text-align: center;
+}
+
+/* Button Width Utility for Form */
 #contactForm .btn-wide {
   width: 100%;
   max-width: 70%;
@@ -72,14 +143,175 @@ main .container {
   }
 }
 
-/* CONTACT section cards */
+/* =========================================
+   4. NAVBAR (Modern)
+   ========================================= */
+.navbar-modern {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  transition: padding 0.3s ease;
+}
+
+.brand-text {
+  font-size: 1.35rem;
+  letter-spacing: -0.5px;
+  color: #051009;
+}
+
+.brand-accent {
+  color: var(--brand-green);
+}
+
+.navbar-modern .nav-link {
+  font-weight: 500;
+  color: #6c757d;
+  font-size: 0.95rem;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.navbar-modern .nav-link:hover,
+.navbar-modern .nav-link.active {
+  color: #051009;
+}
+
+/* Green dot animation */
+.navbar-modern .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 5px;
+  left: 50%;
+  background-color: var(--brand-green);
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.navbar-modern .nav-link:hover::after {
+  width: 30px;
+  opacity: 1;
+}
+
+/* =========================================
+   5. HERO SECTION
+   ========================================= */
+.hero .display-5 {
+  letter-spacing: .2px;
+}
+
+.hero .lead {
+  color: #495057;
+  max-width: 46ch;
+}
+
+/* =========================================
+   6. SERVICES SECTION (Cards)
+   ========================================= */
+.service-card {
+  position: relative;
+  overflow: hidden;
+  background-color: #051009;
+  /* Dark fallback */
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Lift effect */
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1) !important;
+}
+
+/* Dark Overlay */
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(5, 16, 9, 0.55);
+  z-index: -1;
+  transition: background-color 0.3s ease;
+}
+
+.service-card:hover::before {
+  background-color: rgba(5, 16, 9, 0.35);
+}
+
+/* Typography inside cards */
+.service-card h3 {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.service-card .text-muted {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Icons */
+.service-card .service-icon {
+  background-color: #ffffff;
+  color: var(--brand-green);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  background-color: var(--brand-green);
+  color: #ffffff;
+}
+
+/* Background Images */
+.bg-birou {
+  background-image: url('./images/birou.jpg');
+}
+
+.bg-renovare {
+  background-image: url('./images/post_renovare.jpg');
+}
+
+.bg-geamuri {
+  background-image: url('./images/geamuri_rame.jpg');
+}
+
+.bg-general {
+  background-image: url('./images/curatenie_generala.jpg');
+}
+
+.bg-intretinere {
+  background-image: url('./images/intretinere_periodica.jpg');
+}
+
+.bg-baie {
+  background-image: url('./images/buc_baie.jpg');
+}
+
+
+/* =========================================
+   7. CONTACT SECTION & FORMS
+   ========================================= */
 #contact .card {
   border-radius: 1.25rem;
   border: 0;
   box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
 }
 
-/* two columns / cards the same height */
+/* Responsive Flex for Contact Cards */
 @media (min-width: 768px) {
   #contact .contact-row>[class*="col-"] {
     display: flex;
@@ -90,7 +322,7 @@ main .container {
   }
 }
 
-/* Soft rounded icons */
+/* Contact Icons */
 #contact .contact-icon {
   width: 2.7rem;
   height: 2.7rem;
@@ -102,99 +334,17 @@ main .container {
   font-size: 1.35rem;
 }
 
-/* Brand buttons (whatapp / call /  mail / trimite cerere) */
-
-
-/* Form focus ring */
+/* Form Inputs */
 #contactForm .form-control:focus,
 #contactForm .form-check-input:focus {
   box-shadow: 0 0 0 0.2rem rgba(var(--brand-green-rgb), 0.2);
   border-color: var(--brand-green);
 }
 
-/* green links (Politica de Confidențialitate etc.) */
-.link-brand {
-  color: var(--brand-green);
-}
-
-.link-brand:hover {
-  color: #18a583;
-}
-
-
-/*BUTTONS */
-
-.btn-brand, 
-.btn-primary {
-  /* The shape and size */
-  display: inline-block;
-  padding: 12px 32px;
-  border-radius: 50px; /* Full pill shape (safe squircle alternative) */
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  position: relative;
-  z-index: 1;
-  
-  /* The Look: Dark text on a light, premium gradient background */
-  background-image: linear-gradient(90deg, #e6fcf5, #fbf6e7, #fcecfe);
-  background-size: 200% auto; /* Allows animation */
-  color: #14387e; /* Dark blue text */
-  
-  /* Soft shadow */
-  box-shadow: 0 4px 15px rgba(20, 56, 126, 0.15);
-}
-
-/* Hover Effect: Slide gradient and lift */
-.btn-brand:hover,
-.btn-primary:hover {
-  background-position: right center; /* Moves the gradient */
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(20, 56, 126, 0.25);
-  color: #14387e;
-}
-
-/* Active/Click Effect */
-.btn-brand:active,
-.btn-primary:active {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 10px rgba(20, 56, 126, 0.15);
-}
-
-/* 2. The "Outline" Button (for secondary actions) */
-.btn-outline-secondary {
-    border-radius: 50px;
-    padding: 11px 30px;
-    border: 2px solid #e6fcf5;
-    color: #14387e;
-    font-weight: 600;
-    background: transparent;
-    transition: all 0.3s ease;
-}
-
-.btn-outline-secondary:hover {
-    background-color: #e6fcf5;
-    color: #051009;
-    border-color: #e6fcf5;
-    transform: translateY(-3px);
-}
-
-/* 3. Contact Actions Container (Stacking the buttons) */
-.contact-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.contact-actions .btn-brand {
-    width: 100%;
-    text-align: center;
-}
-
-/*CUSTOM FOOTER */
+/* =========================================
+   8. FOOTER
+   ========================================= */
+/* Main Footer Container */
 .fs-footer {
   background: linear-gradient(to right, #31326F, #637AB9);
   color: #ffffff;
@@ -204,6 +354,7 @@ main .container {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+/* Top Green Line */
 .fs-footer::before {
   content: "";
   position: absolute;
@@ -213,8 +364,6 @@ main .container {
   height: 3px;
   background: linear-gradient(to right, #A8FBD3, #4FB7B3);
 }
-
-/* logo / about */
 
 .fs-footer-logo {
   font-size: 1.6rem;
@@ -231,8 +380,6 @@ main .container {
   margin-bottom: 20px;
   line-height: 1.6;
 }
-
-/* headings */
 
 .fs-footer h5 {
   color: #ffffff;
@@ -252,8 +399,7 @@ main .container {
   background: #A8FBD3;
 }
 
-/* links list */
-
+/* Footer Links */
 .fs-footer-links {
   list-style: none;
   padding: 0;
@@ -277,8 +423,7 @@ main .container {
   transform: translateX(4px);
 }
 
-/* social icons */
-
+/* Social Icons */
 .fs-social-links {
   display: flex;
   gap: 12px;
@@ -306,8 +451,7 @@ main .container {
   border-color: #4FB7B3;
 }
 
-/* bottom strip */
-
+/* Bottom Strip */
 .fs-footer-bottom {
   margin-top: 40px;
   padding-top: 18px;
@@ -337,8 +481,7 @@ main .container {
   color: #A8FBD3;
 }
 
-/* responsive spacing */
-
+/* Footer Responsive Layout */
 @media (max-width: 768px) {
   .fs-footer-section {
     margin-bottom: 30px;
@@ -350,7 +493,6 @@ main .container {
   }
 }
 
-/* DESKTOP GRID FIX: 2:spacer:1:1 layout */
 @media (min-width: 1200px) {
   .fs-footer .row {
     display: grid;
@@ -363,10 +505,7 @@ main .container {
     width: auto !important;
     max-width: none !important;
   }
-}
 
-/* reduced footer height for desktop */
-@media (min-width: 1200px) {
   .fs-footer {
     padding-top: 40px !important;
     padding-bottom: 20px !important;
@@ -381,178 +520,3 @@ main .container {
     padding-top: 10px !important;
   }
 }
-
-/* --- SERVICES SECTION --- */
-
-.service-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #fff;
-}
-
-/* lift up effect on hover */
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1) !important;
-}
-
-/* circular icon */
-.service-icon {
-    width: 70px;
-    height: 70px;
-    background-color: rgba(var(--brand-green-rgb), 0.1); 
-    color: var(--brand-green);
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.75rem;
-    margin-left: auto;
-    margin-right: auto;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* when hovering the card, fill the icon with green */
-.service-card:hover .service-icon {
-    background-color: var(--brand-green);
-    color: #051009;
-}
-
-
-/* --- MODERN NAVBAR --- */
-
-/* The main container */
-.navbar-modern {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); /* Very subtle shadow instead of border */
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    transition: padding 0.3s ease;
-}
-
-/* Logo styling */
-.brand-text {
-    font-size: 1.35rem;
-    letter-spacing: -0.5px;
-    color: #051009;
-}
-
-.brand-accent {
-    color: var(--brand-green); /* Uses your existing green variable */
-}
-
-/* Navigation Links */
-.navbar-modern .nav-link {
-    font-weight: 500;
-    color: #6c757d; /* Soft gray */
-    font-size: 0.95rem;
-    position: relative;
-    transition: color 0.2s ease;
-}
-
-.navbar-modern .nav-link:hover,
-.navbar-modern .nav-link.active {
-    color: #051009; /* Darker on hover */
-}
-
-/* green dot animation under links on hover */
-.navbar-modern .nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    bottom: 5px;
-    left: 50%;
-    background-color: var(--brand-green);
-    border-radius: 10px;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy effect */
-    transform: translateX(-50%);
-    opacity: 0;
-}
-
-.navbar-modern .nav-link:hover::after {
-    width: 30px; /* Expands to a small line */
-    opacity: 1;
-}
-
-/* Navbar Specific Button */
-.btn-nav-cta {
-    background-color: #051009; /* Black button */
-    color: #fff;
-    font-weight: 600;
-    font-size: 0.9rem;
-    border: 2px solid #051009;
-    transition: all 0.3s ease;
-}
-
-.btn-nav-cta:hover {
-    background-color: var(--brand-green);
-    border-color: var(--brand-green);
-    color: #051009;
-    transform: translateY(-2px);
-}
-
-/* --- SERVICE CARD BACKGROUNDS --- */
-
-.service-card {
-    position: relative;
-    overflow: hidden;
-    background-color: #051009;
-    z-index: 1;
-    background-size: cover;
-    background-position: center;
-    border: none;
-}
-
-.service-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(5, 16, 9, 0.55); 
-    z-index: -1; 
-    transition: background-color 0.3s ease;
-}
-
-
-.service-card:hover::before {
-    background-color: rgba(5, 16, 9, 0.35);
-}
-
-/* TEXT COLORS: Force white text inside the cards */
-.service-card h3 {
-    color: #ffffff;
-    font-weight: 700;
-}
-
-/* Override the bootstrap 'text-muted' gray to make it readable */
-.service-card .text-muted {
-    color: rgba(255, 255, 255, 0.85) !important;
-}
-
-/* ICON: White circle with Green icon (High Contrast) */
-.service-card .service-icon {
-    /* White background makes it pop against the dark photo */
-    background-color: #ffffff; 
-    color: var(--brand-green);
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-/* Hover Effect: Icon turns green, symbol turns white */
-.service-card:hover .service-icon {
-    background-color: var(--brand-green);
-    color: #ffffff;
-}
-
-/* --- SPECIFIC IMAGES (Keep these lines) --- */
-.bg-birou { background-image: url('./images/birou.jpg'); }
-.bg-renovare { background-image: url('./images/post_renovare.jpg'); }
-.bg-geamuri { background-image: url('./images/geamuri_rame.jpg'); }
-.bg-general { background-image: url('./images/curatenie_generala.jpg'); }
-.bg-intretinere { background-image: url('./images/intretinere_periodica.jpg'); }
-.bg-baie { background-image: url('./images/buc_baie.jpg'); }
